@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Dashboard - Recent Orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f7fafd;
+            min-height: 100vh;
+        }
+        .container {
+            margin-top: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.04);
+            border-radius: 10px;
+            background: #fff;
+            padding: 40px;
+        }
+        h2 {
+            color: #38C5F3;
+            font-size: 1.3rem;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Recent Dine-In Orders</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Email</th><th>Mobile</th><th>Diners</th><th>Preferred Time</th><th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in dinein_orders %}
+                <tr>
+                    <td>{{ order['id'] }}</td>
+                    <td>{{ order['name'] }}</td>
+                    <td>{{ order['email'] }}</td>
+                    <td>{{ order['mobile'] }}</td>
+                    <td>{{ order['diners'] }}</td>
+                    <td>{{ order['preferred_time'] }}</td>
+                    <td>{{ order['created_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Recent Takeaway Orders</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Email</th><th>Mobile</th><th>Address</th><th>Payment</th><th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in takeaway_orders %}
+                <tr>
+                    <td>{{ order['id'] }}</td>
+                    <td>{{ order['name'] }}</td>
+                    <td>{{ order['email'] }}</td>
+                    <td>{{ order['mobile'] }}</td>
+                    <td>{{ order['address'] }}</td>
+                    <td>{{ order['payment'] }}</td>
+                    <td>{{ order['created_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Recent Delivery Orders</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Email</th><th>Mobile</th><th>Address</th><th>Payment</th><th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in delivery_orders %}
+                <tr>
+                    <td>{{ order['id'] }}</td>
+                    <td>{{ order['name'] }}</td>
+                    <td>{{ order['email'] }}</td>
+                    <td>{{ order['mobile'] }}</td>
+                    <td>{{ order['address'] }}</td>
+                    <td>{{ order['payment'] }}</td>
+                    <td>{{ order['created_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

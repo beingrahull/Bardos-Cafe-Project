@@ -139,8 +139,3 @@ bardos-cafe/
 
 
 Feel free to use, modify, and distribute with attribution.
-
----
-
-Would you like me to make it even more **portfolio-polished** (with GitHub preview images, dark/light theme badges, and a “Live Demo” placeholder section)?
-That would make it ideal for recruiters or open-source showcases.
